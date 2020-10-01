@@ -1,48 +1,119 @@
 <!DOCTYPE html>
 <head>
-  <title>Projects</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans&display=swap" rel="stylesheet"> 
+  <!--script src="scripts/script.js"></script-->
+  <title>Welcome</title>
 </head>
 
 <body>
   <nav>
     <ul>
-      <li>Projects</li>
-      <li>Experience</li>
-      <li>Activities & Awards</li>
-      <li>Personal</li>
+      <li><a href="#welcome-a">Welcome</a></li>
+      <li><a href="#projects-a">Projects</a></li>
+      <li><a href="#tech-skills-a">Skills</a></li>
+      <li><a href="#experience-a">Experience</a></li>
+      <li><a href="#activities-a">Activities & Awards</a></li>
+      <li><a href="#personal-a">Personal</a></li>
     </ul>
   </nav>
 
-  <section id="projects">
-    <div><!--calc--></div>
-    <div><!--rps--></div>
-    <div><!--etch--></div>
-    <div><!--osiris rex--></div>
+  <a id="welcome-a"></a>
+  <section id="welcome-sec" class="bg1">
+    <h2>Sup.</h2>
+    <p>Write some stuff here.</p>
   </section>
 
-  <section id="resume">
+  <a id="projects-a"></a>
+  <section id="projects-sec" class="bg2">
+    <h2>Projects</h2>
+    <div id="projects-div">
+      <div>
+        <img class="project-img" src="images/rps.png" alt="rock paper scissors project">
+      </div>
+      <div>
+        <img class="project-img" src="images/etch.png" alt="etch-a-sketch project">
+      </div>
+      <div>
+        <img class="project-img" src="images/etch.png" alt="etch-a-sketch project">
+      </div>
+      <div>
+        <img class="project-img" src="images/calc.png" alt="calculator project">
+      </div>
+    </div>
+  </section>
+
+  <a id="tech-skills-a"></a>
+  <section id="tech-skills-sec" class="bg1">
     <h2>Technical Skills</h2>
-    <div>Skills here</div>
-
-    <h2>Experience</h2>
-    <div>IBM</div>
-    <div>IBM</div>
-    <div>AmEx</div>
-    <div>IBM</div>
-
-    <h2>Education</h2>
-    <div>UofA</div>
+    <div>C, Java (including Servlets, JDBC, JNI, GUIs, JUnit Testing), Python, C++, SQL, HTML, CSS, JavaScript, jQuery,
+      Python, Perl, PHP, Agile Development with Scrum Master experience, Object Oriented Programming and Design, Rational
+      Team Concert, Git, Eclipse Development tools.</div>
   </section>
 
-  <section id="activities">
-    
+  <a id="experience-a"></a>
+  <section id="experience-sec" class="bg2">
+    <h2>Experience & Education</h2>
+    <div class="card-wrapper">
+      <div class="card">
+        <h3>International Business Machines Corporation (IBM) March 2019 - May 2020</h3>
+        <p>
+          Software Engineer with Mamdouh Khamis
+          Spectrum Scale Development Team
+        </p>
+      </div>
+      
+      <div class="card">
+        <h3>International Business Machines Corporation (IBM) January 2016 - March 2019</h3>
+        <p>
+          Software Engineer with Christopher Ruskay
+          Spectrum Protect Server Development Team
+        </p>
+      </div>
+      
+      <div class="card">
+        <h3>American Express June 2015 - August 2015</h3>
+        <p>
+          Software Engineer Intern with Aparesh Basu
+          Global Corporate Payments Team
+        </p>
+      </div>
+      <div class="card">
+        <h3>International Business Machines Corporation (IBM) May 2013 - May 2015</h3>
+        <p>
+          Server Development Co-Op with Michael Sisco
+          Tivoli Storage Manager Development Team
+        </p>
+      </div>
+      
+      <div class="card">
+        <p>
+          University of Arizona
+          BS in Computer Science, with Honors
+        </p>
+      </div>
+    </div>
   </section>
 
-  <section id="personal">
-    
+  <a id="activities-a"></a>
+  <section id="activities-sec" class="bg1">
+    <h2>Activities & Awards</h2>
+    <div>Online certifications</div>
+    <div>"Other Proficiencies" from Resume</div>
+    <div>Volunteer Activities</div>
+  </section>
+
+  <a id="personal-a"></a>
+  <section id="personal-sec" class="bg2">
+    <h2>Personal Interests</h2>
+    <p>Dancing, piano, dogs, vidya, books, crafting, yada yada</p>
   </section>
 
   <footer>
-    <!--contact info here-->
+    <ul>
+      <li>Contact</li>
+      <li>Info</li>
+      <li>Here</li>
+    </ul>
   </footer>
 </body>
