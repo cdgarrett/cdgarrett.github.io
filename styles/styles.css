@@ -2,12 +2,11 @@
 * { margin:0; padding:0; }
 p { margin:5px 0 10px 0; }
 
-/* https://coolors.co/1a181b-564d65-005441-007a5e-e4e7f1
-   https://coolors.co/ad343e-f2af29-f1faee-a8dadc-457b9d-1d3557 */
 :root {
   --section-color-1: #006D77;
   --section-color-2: #83C5BE;
   --main-font-color: #EDF6F9;
+  --secondary-font-color: #006d77;
   --nav-color: #E29578;
   --card-color: #FFDDD2;
   --highlight-color: #E29578;
@@ -15,34 +14,8 @@ p { margin:5px 0 10px 0; }
 
 body {
   font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
   color: var(--main-font-color);
-}
-
-nav {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 48px;
-  background-color: var(--nav-color);
-  font-family: 'Lobster', cursive;
-  font-size: 1.8rem;
-  color: var(--main-font-color);
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-ul {
-  float: right;
-}
-
-li {
-  list-style-type: none;
-  float: left;
-  margin: 4px 8px 4px 8px;
 }
 
 h1, h2 {
@@ -55,10 +28,8 @@ h1, h2 {
 }
 
 section {
-  justify-content: center;
   text-align: center;
   padding: 5rem 2rem;
-  background-color: #E4E7F1;
 }
 
 .bg1 {
@@ -69,6 +40,36 @@ section {
   background-color: var(--section-color-2);
 }
 
+/* Rules for fixed header nav bar and nav links */
+nav {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 48px;
+  background-color: var(--nav-color);
+  font-family: 'Lobster', cursive;
+  font-size: 1.8rem;
+  color: var(--main-font-color);
+  z-index: 1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+nav > ul {
+  float: right;
+}
+
+nav > ul > li {
+  list-style-type: none;
+  float: left;
+  margin: 4px 8px 4px 8px;
+}
+
+/* Rules for Project section flip cards */
 #projects-div {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -82,10 +83,6 @@ section {
 #projects-div > div {
   width: 24rem;
   height: 24rem;
-  background-color: var(--card-color);
-  border: 4px solid var(--highlight-color);
-  /*border-radius: 16px;
-  box-shadow: 8px 8px 16px 0px rgba(69,62,81,1);*/
 }
 
 .project-img {
@@ -94,6 +91,57 @@ section {
   object-fit: cover;
 }
 
+.flip-card-wrapper {
+  perspective: 1000px;
+}
+
+.flip-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  color: var(--secondary-font-color);
+  background-color: var(--card-color);
+  border: 4px solid var(--highlight-color);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--card-color);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+.flip-card-wrapper:hover .flip-card {
+  transform: rotateY(180deg);
+}
+
+.flip-card-back > h3 {
+  font-family: 'Lobster', cursive;
+  font-size: 2rem;
+  text-align: center;
+  text-decoration: underline;
+}
+
+/* Rules for Technical Skills section */
+#tech-skills-ctr {
+  width: 50%;
+  margin: 0 auto;
+}
+
+#tech-skills-ctr > ul {
+  list-style-type: none;
+  columns: 2;
+}
+
+/* Rules for Experience section horizontal scrolling cards */
 .card-wrapper {
   overflow-x: scroll;
   overflow-y: hidden;
@@ -104,6 +152,7 @@ section {
   display: inline-block;
 }
 
+/* Rules for footer & contact links */
 footer {
   bottom: 0px;
   left: 0px;
@@ -113,4 +162,10 @@ footer {
   font-family: 'Lobster', cursive;
   font-size: 1.8rem;
   color: var(--main-font-color);
+}
+
+footer > ul > li {
+  list-style-type: none;
+  float: left;
+  margin: 4px 8px 4px 8px;
 }
