@@ -2,7 +2,7 @@
 <head>
   <link rel="stylesheet" href="styles/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans&display=swap" rel="stylesheet"> 
-  <!--script src="scripts/script.js"></script-->
+  <script src="scripts/resume.js"></script>
   <title>Welcome</title>
 </head>
 
@@ -10,9 +10,9 @@
   <nav>
     <ul>
       <li><a href="#welcome-a">Welcome</a></li>
-      <li><a href="#projects-a">Projects</a></li>
-      <li><a href="#tech-skills-a">Skills</a></li>
       <li><a href="#experience-a">Experience</a></li>
+      <li><a href="#tech-skills-a">Skills</a></li>
+      <li><a href="#projects-a">Projects</a></li>
       <li><a href="#activities-a">Activities & Awards</a></li>
       <li><a href="#personal-a">Personal</a></li>
     </ul>
@@ -22,6 +22,130 @@
   <section id="welcome-sec" class="bg1">
     <h2>Sup.</h2>
     <p>Write some stuff here.</p>
+  </section>
+
+  <a id="experience-a"></a>
+  <section id="experience-sec" class="bg2 timeline">
+    <h2>Experience & Education</h2>
+    <div class="timeline-ctr">
+      <div class="timeline-dates">
+        <div class="timeline-line">
+          <ol>
+            <li><a href="#0" data-date="" class="timeline-date">Date 1</a></li>
+            <li><a href="#0" data-date="" class="timeline-date">Date 2</a></li>
+            <li><a href="#0" data-date="" class="timeline-date">Date 3</a></li>
+            <li><a href="#0" data-date="" class="timeline-date">Date 4</a></li>
+          </ol>
+        </div>
+      </div>
+
+      <ul id="timeline-nav-ul">
+        <li><a href="#0" class="text-replace timeline-nav timeline-nav-prev timeline-nav-inactive">Prev</a></li>
+        <li><a href="#0" class="text-replace timeline-nav timeline-nav-next">Next</a></li>
+      </ul>
+    </div>
+
+    <div class="timeline-events">
+      <ol id="timeline-events-ol">
+        <li class="timeline-event timeline-event-selected"></li>
+          <div class="timeline-event-content">
+            <h3 class="timeline-event-title">International Business Machines Corporation (IBM)</h3>
+            <em class="timeline-event-date">March 2019 - May 2020</em>
+            <h4 class="timeline-event-subtitle">Software Engineer, Spectrum Scale Development Team</h4>
+            <ul class="timeline-event-descr">
+              <li>Created a suite of commands in C++ to monitor system health using Linux command-line tools and parsing, and
+                to read and write hardware component attributes using existing internal libraries and drivers.</li>
+              <li>Worked with software developers and testers to analyze and resolve defects in a large-scale C++ code base.</li>
+              <li>Extended command processing and testing utilities to make new features available across all supported code versions.</li>
+              <li>Aided team members in creating and reviewing new product documentation for correctness and improved customer experience.</li>
+            </ul>
+          </div>
+        </li>
+         
+        <li class="timeline-event">
+          <div class="timeline-event-content">
+            <h3 class="timeline-event-title">International Business Machines Corporation (IBM)</h3>
+            <em class="timeline-event-date">January 2016 - March 2019</em>
+            <h4 class="timeline-event-subtitle">Software Engineer, Spectrum Protect Server Development Team</h4>
+            <ul class="timeline-event-descr">
+              <li>Collaborated with server, client, GUI, and test teams to identify and resolve problems in existing large-scale C
+                code base.</li>
+              <li>Implemented new commands and enhanced performance of existing code in areas such as container storage,
+                data replication, local protection to tape, data storage conversion, and data storage tiering.</li>
+              <li>Worked closely with GUI team to design a new package management system to help customers better track,
+                download, and apply product updates across many diverse client systems. Designed and developed server
+                back-end algorithms, database tables, and interface for front-end access to native code using C, SQL, and Java
+                Native Interface.</li>
+              <li>Managed sprint planning, workload estimating, artifact tracking, and sprint reflections as scrum master.</li>
+              <li>Assisted with creating and running automated tests and enhancing internal automation tools.</li>
+              <li>Provided customer support to analyze and resolve field issues.</li>
+              <li>Published regular external documentation to inform customers of code updates.</li>
+            </ul>
+          </div>
+        </li>
+      
+        <li class="timeline-event">
+          <div class="timeline-event-content">
+            <h3 class="timeline-event-title">American Express</h3>
+            <em class="timeline-event-date">June 2015 - August 2015</em>
+            <h4 class="timeline-event-subtitle">Software Engineer Intern, Global Corporate Payments Team</h4>
+            <ul class="timeline-event-descr">
+              <li>Developed a proof-of-concept to convert existing UI widgets into APIs for client integration.</li>
+              <li>Analyzed large-scale website to identify widgets and API needs to design and create a RESTful web service with
+                Spring Web MVC, Java, HTML, CSS, JavaScript, and JQuery.</li>
+            </ul>
+          </div>
+      </li>
+
+
+        <li class="timeline-event">
+          <div class="timeline-event-content">
+            <h3 class="timeline-event-title">International Business Machines Corporation (IBM)</h3>
+            <em class="timeline-event-date">May 2013 - May 2015</em>
+            <h4 class="timeline-event-subtitle">Server Development Co-Op, Tivoli Storage Manager Development Team</h4>
+            <ul class="timeline-event-descr">
+              <li>Worked under software developers to fix defects and add functionality to existing data storage product (C) and
+                internal automation (Perl). Performed a range of tests to analyze and report on functionality, usability,
+                appearance, and user experience.</li>
+              <li>Streamlined data analysis process by creating scrips to compile monthly data.</li>
+              <li>Designed and created a new department scheduling web page.</li>
+            </ul>
+          </div>
+        </li>
+      
+        <li class="timeline-event">
+          <div class="timeline-event-content">
+            <h3>University of Arizona</h3>
+            <em class="timeline-event-date">August 2011 - December 2015</em>>
+            <p class="timeline-event-descr">BS in Computer Science, with Honors</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <a id="tech-skills-a"></a>
+  <section id="tech-skills-sec" class="bg1">
+    <h2>Technical Skills</h2>
+    <div id="tech-skills-ctr">
+      <ul>
+        <li>C</li>
+        <li>Java (including Servlets, JDBC, JNI, GUIs, JUnit Testing)</li>
+        <li>Python</li>
+        <li>C++</li>
+        <li>SQL</li>
+        <li>HTML, CSS</li>
+        <li>JavaScript, jQuery</li>
+        <li>PHP</li>
+        <li>Perl</li>
+        <li>Agile Development with Scrum Master experience</li>
+        <li>Object Oriented Programming and Design</li>
+        <li>Rational Team Concert</li>
+        <li>Git</li>
+        <li>Eclipse Development tools</li>
+        <li>Visual Studio Code</li>
+      </ul>
+    </div>
   </section>
 
   <a id="projects-a"></a>
@@ -78,74 +202,6 @@
     </div>
   </section>
 
-  <a id="tech-skills-a"></a>
-  <section id="tech-skills-sec" class="bg1">
-    <h2>Technical Skills</h2>
-    <div id="tech-skills-ctr">
-      <ul>
-        <li>C</li>
-        <li>Java (including Servlets, JDBC, JNI, GUIs, JUnit Testing)</li>
-        <li>Python</li>
-        <li>C++</li>
-        <li>SQL</li>
-        <li>HTML, CSS</li>
-        <li>JavaScript, jQuery</li>
-        <li>PHP</li>
-        <li>Perl</li>
-        <li>Agile Development with Scrum Master experience</li>
-        <li>Object Oriented Programming and Design</li>
-        <li>Rational Team Concert</li>
-        <li>Git</li>
-        <li>Eclipse Development tools</li>
-        <li>Visual Studio Code</li>
-      </ul>
-    </div>
-  </section>
-
-  <a id="experience-a"></a>
-  <section id="experience-sec" class="bg2">
-    <h2>Experience & Education</h2>
-    <div class="card-wrapper">
-      <div class="card">
-        <h3>International Business Machines Corporation (IBM) March 2019 - May 2020</h3>
-        <p>
-          Software Engineer with Mamdouh Khamis
-          Spectrum Scale Development Team
-        </p>
-      </div>
-      
-      <div class="card">
-        <h3>International Business Machines Corporation (IBM) January 2016 - March 2019</h3>
-        <p>
-          Software Engineer with Christopher Ruskay
-          Spectrum Protect Server Development Team
-        </p>
-      </div>
-      
-      <div class="card">
-        <h3>American Express June 2015 - August 2015</h3>
-        <p>
-          Software Engineer Intern with Aparesh Basu
-          Global Corporate Payments Team
-        </p>
-      </div>
-      <div class="card">
-        <h3>International Business Machines Corporation (IBM) May 2013 - May 2015</h3>
-        <p>
-          Server Development Co-Op with Michael Sisco
-          Tivoli Storage Manager Development Team
-        </p>
-      </div>
-      
-      <div class="card">
-        <p>
-          University of Arizona
-          BS in Computer Science, with Honors
-        </p>
-      </div>
-    </div>
-  </section>
-
   <a id="activities-a"></a>
   <section id="activities-sec" class="bg1">
     <h2>Activities & Awards</h2>
@@ -157,7 +213,7 @@
   <a id="personal-a"></a>
   <section id="personal-sec" class="bg2">
     <h2>Personal Interests</h2>
-    <p>Dancing, piano, dogs, vidya, books, crafting, yada yada</p>
+    <p>Swing dancing, piano, reading, crafting, video games, dogs, travel, yada yada</p>
   </section>
 
   <footer>

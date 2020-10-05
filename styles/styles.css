@@ -69,6 +69,82 @@ nav > ul > li {
   margin: 4px 8px 4px 8px;
 }
 
+/* Rules for Experience section horizontal scrolling cards */
+#experience-sec {
+  text-align: justify;
+  font-size: 0.9rem;
+}
+
+.timeline-events {
+  position: relative;
+}
+
+.timeline-event {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  left: 0;
+  top: 0;
+  transform: translateX(-100%);
+  opacity: 0;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-in-out;
+}
+
+.timeline-event-selected {
+  position: relative;
+  z-index: 2;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.timeline-event-enter-r, .timeline-event-leave-r {
+  animation-name: enter-right;
+}
+
+.timeline-event-enter-l, .timeline-event-leave-l {
+  animation-name: enter-left;
+}
+
+.timeline-event-leave-r, .timeline-event-leave-l {
+  animation-direction: reverse;
+}
+
+@keyframes cd-enter-right {
+  0% {
+     opacity: 0;
+     transform: translateX(100%);
+  }
+
+  100% {
+     opacity: 1;
+     transform: translateX(0%);
+  }
+}
+
+@keyframes cd-enter-left {
+  0% {
+     opacity: 0;
+     transform: translateX(-100%);
+  }
+
+  100% {
+     opacity: 1;
+     transform: translateX(0%);
+  }
+}
+
+/* Rules for Technical Skills section */
+#tech-skills-ctr {
+  width: 50%;
+  margin: 0 auto;
+}
+
+#tech-skills-ctr > ul {
+  list-style-type: none;
+  columns: 2;
+}
+
 /* Rules for Project section flip cards */
 #projects-div {
   display: grid;
@@ -130,26 +206,18 @@ nav > ul > li {
   text-decoration: underline;
 }
 
-/* Rules for Technical Skills section */
-#tech-skills-ctr {
-  width: 50%;
-  margin: 0 auto;
-}
-
-#tech-skills-ctr > ul {
-  list-style-type: none;
-  columns: 2;
-}
-
-/* Rules for Experience section horizontal scrolling cards */
+/* Rules for Personal horizontal slider section */
 .card-wrapper {
   overflow-x: scroll;
   overflow-y: hidden;
-  white-space: nowrap;
+  display: flex;
+  justify-content: center;
 }
 
 .card {
-  display: inline-block;
+  font-size: 0.9rem;
+  width: 32rem;
+  height: 32rem;
 }
 
 /* Rules for footer & contact links */
