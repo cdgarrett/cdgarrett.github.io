@@ -5,24 +5,43 @@ window.onload = function()
 
 
 function shiftTimeline(e) {
-  //Check nav link is not inactive
+  let navArrow = e.target;
 
-  //Check which nav link was clicked
+  /* Ideally this shouldn't be click-able.. */
+  if (navArrow.classList.contains("timeline-nav-inactive"))
+    return;
 
-  //Figure out currently selected timeline event
-  
-  //Remove selected class from current event
-
-  //Get prev/next event and apply selected class
-
-  //If at either end of list, apply inactive class
-
-  if (e.target.textContent == "Prev")
+  let currentEvent = document.querySelector('.timeline-event-selected');
+  if (navArrow.textContent == "<")
   {
-    console.log("prev");
+    /* See previous comment about making the arrow unclick-able */
+    if (currentEvent.previousElementSibling == null)
+      return;
+    
+    currentEvent.previousElementSibling.classList.add("timeline-event-selected");
+    if (currentEvent.previousElementSibling.previousElementSibling == null)
+        navArrow.classList.add("timeline-nav-inactive");
+      
+    navArrow.parentElement.nextElementSibling.firstElementChild.classList.remove("timeline-nav-inactive");
   }
-  else if (e.target.textContent == "Next")
+  else if (navArrow.textContent == ">")
   {
-    console.log("next");
+    /* See previous comment about making the arrow unclick-able */
+    if (currentEvent.nextElementSibling == null)
+      return;
+
+      currentEvent.nextElementSibling.classList.add("timeline-event-selected");
+      if (currentEvent.nextElementSibling.nextElementSibling == null)
+        navArrow.classList.add("timeline-nav-inactive");
+      
+      navArrow.parentElement.previousElementSibling.firstElementChild.classList.remove("timeline-nav-inactive");
   }
+  currentEvent.classList.remove("timeline-event-selected");
+  console.log(currentEvent.classList);
 }
+
+/* 
+  let eventList = document.querySelector("#timeline-events-ol");
+  if (eventList.firstElementChild.classList.contains("timeline-event-selected"))
+    //add inactive class to left arrow
+    */

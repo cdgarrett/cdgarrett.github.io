@@ -75,8 +75,32 @@ nav > ul > li {
   font-size: 0.9rem;
 }
 
+#timeline-nav-ul {
+  list-style-type: none;
+}
+
+#timeline-nav-ul > li {
+  height: 2rem;
+  width: 2rem;
+  color: var(--main-font-color);
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  /*border: 2px solid var(--main-font-color);
+  border-radius: 15px;
+  background-color: var(--highlight-color);*/
+}
+
+.timeline-nav-inactive {
+  color: grey;
+}
+
 .timeline-events {
   position: relative;
+}
+
+#timeline-events-ol {
+  list-style-type: none;
 }
 
 .timeline-event {
@@ -96,6 +120,10 @@ nav > ul > li {
   z-index: 2;
   opacity: 1;
   transform: translateX(0);
+}
+
+.timeline-event-descr {
+  list-style-type: square;
 }
 
 .timeline-event-enter-r, .timeline-event-leave-r {
@@ -206,18 +234,25 @@ nav > ul > li {
   text-decoration: underline;
 }
 
-/* Rules for Personal horizontal slider section */
-.card-wrapper {
+/* Rules for Personal Interests section*/
+#personal-ctr {
+  width: 85%;
+  margin: 0 auto;
   overflow-x: scroll;
   overflow-y: hidden;
   display: flex;
-  justify-content: center;
 }
 
-.card {
-  font-size: 0.9rem;
-  width: 32rem;
-  height: 32rem;
+#personal-ctr > div {
+  height: 16rem;
+  width: 16rem;
+  margin: 8px;
+  border: 4px solid var(--highlight-color);
+}
+
+.personal-img {
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Rules for footer & contact links */
