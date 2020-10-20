@@ -1,6 +1,6 @@
 window.onload = function()
 {
-  document.querySelector('#timeline-nav-ul').childNodes.forEach(li => li.addEventListener('click', shiftTimeline));
+  document.querySelectorAll('.timeline-nav').forEach(icon => icon.addEventListener('click', shiftTimeline));
 }
 
 
@@ -39,9 +39,3 @@ function shiftTimeline(e) {
   currentEvent.classList.remove("timeline-event-selected");
   console.log(currentEvent.classList);
 }
-
-/* 
-  let eventList = document.querySelector("#timeline-events-ol");
-  if (eventList.firstElementChild.classList.contains("timeline-event-selected"))
-    //add inactive class to left arrow
-    */

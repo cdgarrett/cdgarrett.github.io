@@ -3,6 +3,7 @@
   <link rel="stylesheet" href="styles/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans&display=swap" rel="stylesheet"> 
   <script src="scripts/resume.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
   <title>Welcome</title>
 </head>
 
@@ -10,8 +11,8 @@
   <nav>
     <ul>
       <li><a href="#welcome-a">Welcome</a></li>
-      <li><a href="#experience-a">Experience</a></li>
       <li><a href="#tech-skills-a">Skills</a></li>
+      <li><a href="#experience-a">Experience</a></li>
       <li><a href="#projects-a">Projects</a></li>
       <li><a href="#activities-a">Activities & Awards</a></li>
       <li><a href="#personal-a">Personal</a></li>
@@ -24,30 +25,65 @@
     <p>Write some stuff here.</p>
   </section>
 
+  <a id="tech-skills-a"></a>
+  <section id="tech-skills-sec" class="bg2">
+    <h2>Technical Skills</h2>
+    <div id="tech-skills-ctr">
+      <ul>
+        <li>Java (including Servlets, JDBC, JNI, GUIs, JUnit Testing)</li>
+        <li>Python</li>
+        <li>C, C++</li>
+        <li>SQL</li>
+        <li>HTML, CSS</li>
+        <li>JavaScript, jQuery</li>
+        <li>PHP</li>
+        <li>Perl</li>
+        <li>Agile Development with Scrum Master experience</li>
+        <li>Object Oriented Programming and Design</li>
+        <li>Rational Team Concert</li>
+        <li>Git</li>
+        <li>Eclipse Development tools</li>
+        <li>Visual Studio Code</li>
+      </ul>
+    </div>
+  </section>
+
   <a id="experience-a"></a>
-  <section id="experience-sec" class="bg2 timeline">
+  <section id="experience-sec" class="bg1 timeline">
     <h2>Experience & Education</h2>
     <div class="timeline-ctr">
-      <!--div class="timeline-dates">
+      <div class="timeline-dates">
         <div class="timeline-line">
-          <ol>
-            <li><a href="#0" data-date="" class="timeline-date">Date 1</a></li>
-            <li><a href="#0" data-date="" class="timeline-date">Date 2</a></li>
-            <li><a href="#0" data-date="" class="timeline-date">Date 3</a></li>
-            <li><a href="#0" data-date="" class="timeline-date">Date 4</a></li>
+          <ol class="timeline-dates-ol">
+            <li><a href="#0" class="timeline-date timeline-date-selected" data-date="10-01-2019" style="left: 5px">Oct 2020</a></li>
+            <li><a href="#0" class="timeline-date" data-date="03-01-2019" style="left: 150px">Mar 2019</a></li>
+            <li><a href="#0" class="timeline-date" data-date="01-01-2016" style="left: 295px">Jan 2016</a></li>
+            <li><a href="#0" class="timeline-date" data-date="06-01-2015" style="left: 440px">June 2015</a></li>
+            <li><a href="#0" class="timeline-date" data-date="05-01-2013" style="left: 585px">May 2013</a></li>
+            <li><a href="#0" class="timeline-date" data-date="08-01-2011" style="left: 730px">Aug 2011</a></li>
           </ol>
         </div>
-      </div-->
+      </div>
 
       <ul id="timeline-nav-ul">
-        <li><a href="#0" class="text-replace timeline-nav timeline-nav-prev timeline-nav-inactive"><</a></li>
-        <li><a href="#0" class="text-replace timeline-nav timeline-nav-next">></a></li>
+        <li><a class="timeline-nav timeline-nav-prev timeline-nav-inactive" href="#0"><i class="arrow left"></i></i></a></li>
+        <li><a class="timeline-nav timeline-nav-next" href="#0"><i class="arrow right"></i></a></li>
       </ul>
     </div>
 
     <div class="timeline-events">
       <ol id="timeline-events-ol">
         <li class="timeline-event timeline-event-selected">
+          <div class="timeline-event-content">
+            <h3 class="timeline-event-title">Edwards Airforce Test Center</h3>
+            <em class="timeline-event-date">October 2020 - Present</em>
+            <h4 class="timeline-event-subtitle">Computer Scientist</h4>
+            <ul class="timeline-event-descr">
+            </ul>
+          </div>
+        </li>
+        
+        <li class="timeline-event">
           <div class="timeline-event-content">
             <h3 class="timeline-event-title">International Business Machines Corporation (IBM)</h3>
             <em class="timeline-event-date">March 2019 - May 2020</em>
@@ -95,7 +131,7 @@
                 Spring Web MVC, Java, HTML, CSS, JavaScript, and JQuery.</li>
             </ul>
           </div>
-      </li>
+        </li>
 
 
         <li class="timeline-event">
@@ -121,30 +157,6 @@
           </div>
         </li>
       </ol>
-    </div>
-  </section>
-
-  <a id="tech-skills-a"></a>
-  <section id="tech-skills-sec" class="bg1">
-    <h2>Technical Skills</h2>
-    <div id="tech-skills-ctr">
-      <ul>
-        <li>C</li>
-        <li>Java (including Servlets, JDBC, JNI, GUIs, JUnit Testing)</li>
-        <li>Python</li>
-        <li>C++</li>
-        <li>SQL</li>
-        <li>HTML, CSS</li>
-        <li>JavaScript, jQuery</li>
-        <li>PHP</li>
-        <li>Perl</li>
-        <li>Agile Development with Scrum Master experience</li>
-        <li>Object Oriented Programming and Design</li>
-        <li>Rational Team Concert</li>
-        <li>Git</li>
-        <li>Eclipse Development tools</li>
-        <li>Visual Studio Code</li>
-      </ul>
     </div>
   </section>
 
@@ -205,42 +217,77 @@
   <a id="activities-a"></a>
   <section id="activities-sec" class="bg1">
     <h2>Activities & Awards</h2>
-    <div>Online certifications</div>
-    <div>"Other Proficiencies" from Resume</div>
-    <div>Volunteer Activities</div>
+    <div id="activities-ctr">
+      <div class="activities-divs">
+        <h3>Online Courses & Certifications</h3>
+        <ul>
+          <li>Udemy "Complete Python Bootcamp: From Zero to Hero in Python" - In Progress</li>
+          <li>Udemy "Agile PM 101 - Learn the Truth About Agile versus Waterfall" - October 2020</li>
+          <li>Udemy "Complete SQL Guide" - September 2020</li>
+          <li>The Odin Project "Web Development 101" - August 2020</li>
+          <li>freeCodeCamp "Responsive Web Design Certification" - June 2020 </li>
+        </ul>
+      </div>
+
+      <div class="activities-divs">
+        <h3>Volunteer Activities</h3>
+        <ul>
+          <li>2017 – 2019: University of Arizona Swing Cats</li>
+          <li>2019: United Way’s Days of Caring, Leaps for Lives, Late-Night Lindy</li>
+          <li>2018: Desert Foods Festival, Hotel Congress Dillinger Days, Southern Arizona Arts & Cultural Alliance Carnival, Leaps for Lives</li>
+          <li>2017: United Way’s Days of Caring, Leaps for Lives</li>
+          <li>2016: United Way’s Days of Caring</li>
+        </ul>
+      </div>
+
+      <div class="activities-divs">
+        <h3>Other Awards & Activities</h3>
+        <ul>
+          <li>IBM Super Learner, 2019</li>
+          <li>Tucson Hispanic Chamber of Commerce “Head Over Heels” Women’s Business Conference, 2018</li>
+          <li>YWCA Women’s Business Center 29 th Annual Women’s Leadership Conference, 2016</li>
+          <li>American Express “Innovation Fridays” weekly collaborative design sessions, 2015</li>
+          <li>Arizona Board of Regent’s High Honors Tuition Scholarship, 2011 – 2015</li>
+          <li>University of Arizona Academic Year Distinction Award, 2012 & 2015</li>
+          <li>University of Arizona Dean’s List, Dean’s List with Distinction Awards, 2011 – 2014</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <a id="personal-a"></a>
   <section id="personal-sec" class="bg2">
     <h2>Personal Interests</h2>
-    <p>Swing dancing, piano, reading, crafting, video games, baking, dogs, kayaking, pumpkin carving, travel</p>
     <div id="personal-ctr">
-      <div>
-        <img class="personal-img" src="images/swing_dancing.jpg" alt="Swing dancing">
-      </div>
-      <div>
-        <img class="personal-img" src="images/canada_rafting.jpg" alt="Rafting in Canada">
-      </div>
-      <div>
-        <img class="personal-img" src="images/pugkin.jpg" alt="Pug pumpkin carving">
-      </div>
-      <div>
-        <img class="personal-img" src="images/ensemble.jpg" alt="Piano performance">
-      </div>
-      <div>
-        <img class="personal-img" src="images/Snickers.jpg" alt="A pug named Snickers">
-      </div>
-      <div>
-        <img class="personal-img" src="images/canada.jpg" alt="Capilano bridge, Canada">
-      </div>
-      <div>
-        <img class="personal-img" src="images/jack_skellington_pumpkin.jpg" alt="Pumpkin carving">
-      </div>
-      <div>
-        <img class="personal-img" src="images/woodburn.jpg" alt="Slytherin crest wood burn">
-      </div>
-      <div>
-        <img class="personal-img" src="images/scotland.jpg" alt="Dunnottar Castle">
+      <p>Swing dancing, Piano, Reading, Crafting, Video Games, Baking, Dogs, Kayaking, Traveling</p>
+      <div id="slider-ctr">
+        <div>
+          <img class="personal-img" src="images/swing_dancing.jpg" alt="Swing dancing">
+        </div>
+        <div>
+          <img class="personal-img" src="images/canada_rafting.jpg" alt="Rafting in Canada">
+        </div>
+        <div>
+          <img class="personal-img" src="images/pugkin.jpg" alt="Pug pumpkin carving">
+        </div>
+        <div>
+          <img class="personal-img" src="images/ensemble.jpg" alt="Piano performance">
+        </div>
+        <div>
+          <img class="personal-img" src="images/Snickers.jpg" alt="A pug named Snickers">
+        </div>
+        <div>
+          <img class="personal-img" src="images/canada.jpg" alt="Capilano bridge, Canada">
+        </div>
+        <div>
+          <img class="personal-img" src="images/jack_skellington_pumpkin.jpg" alt="Pumpkin carving">
+        </div>
+        <div>
+          <img class="personal-img" src="images/woodburn.jpg" alt="Slytherin crest wood burn">
+        </div>
+        <div>
+          <img class="personal-img" src="images/scotland.jpg" alt="Dunnottar Castle">
+        </div>
       </div>
     </div>
   </section>

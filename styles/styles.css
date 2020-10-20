@@ -7,6 +7,7 @@ p { margin:5px 0 10px 0; }
   --section-color-2: #83C5BE;
   --main-font-color: #EDF6F9;
   --secondary-font-color: #006d77;
+  --section-color-1-fade: rgba(0, 109, 119, 0.5);
   --nav-color: #E29578;
   --card-color: #FFDDD2;
   --highlight-color: #E29578;
@@ -25,6 +26,13 @@ h1, h2 {
   color:var(--main-font-color);
   padding: 2rem;
   text-decoration: underline;
+}
+
+h3 {
+  font-family: 'Lobster', cursive;
+  font-size: 2rem;
+  text-align: center;
+  padding: 1rem;
 }
 
 section {
@@ -51,7 +59,7 @@ nav {
   font-family: 'Lobster', cursive;
   font-size: 1.8rem;
   color: var(--main-font-color);
-  z-index: 1;
+  z-index: 3;
 }
 
 a {
@@ -71,32 +79,152 @@ nav > ul > li {
 
 /* Rules for Experience section horizontal scrolling cards */
 #experience-sec {
-  text-align: justify;
   font-size: 0.9rem;
+}
+
+.timeline-ctr {
+  position: relative;
+  height: 100px; 
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.timeline-dates {
+  position: relative;
+  height: 100%;
+  
+}
+
+.timeline-line {
+  position: absolute;
+  z-index: 1;
+  width: 800px;
+  top: 49px;
+  height: 2px;
+  background-color: var(--highlight-color);
+  transition: transform .4s,-webkit-transform .4s;
+}
+
+.timeline-dates-ol {
+  list-style: none;
+}
+
+/* Starter styling for faded timeline edges
+   - Need to adjust z-index of timeline labels for this to work
+  left: 0;
+  background: linear-gradient(to right, var(--section-color-1), var(--section-color-1-fade));
+}
+
+.timeline-dates::after {
+  right: 0;
+  background: linear-gradient(to left, var(--section-color-1), var(--section-color-1-fade));
+}
+
+.timeline-dates::before, .timeline-dates::after {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  height: 100%;
+  width: 20px;
+}*/
+
+.timeline-date {
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  text-align: center;
+  text-decoration: none;
+  padding-bottom: 15px;
+}
+
+.timeline-date::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -7px;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--highlight-color);
+  background-color: var(--section-color-2);
+}
+
+.timeline-date-selected {
+  pointer-events: none;
+}
+
+.timeline-date-selected::after {
+  background-color: var(--highlight-color);
 }
 
 #timeline-nav-ul {
   list-style-type: none;
 }
 
-#timeline-nav-ul > li {
-  height: 2rem;
-  width: 2rem;
-  color: var(--main-font-color);
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.5rem;
-  /*border: 2px solid var(--main-font-color);
-  border-radius: 15px;
-  background-color: var(--highlight-color);*/
+.timeline-nav {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+  border: 2px solid var(--highlight-color);
+  transition: background-color .3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeline-nav:hover {
+  background-color: var(--section-color-2);
+}
+
+.timeline-nav-inactive:hover {
+  background-color: var(--section-color-1);
+}
+
+.arrow {
+  border: solid var(--highlight-color);
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  height: 4px;
+  width: 4px;
+}
+
+.left {
+  transform: rotate(135deg);
+}
+
+.right {
+  transform: rotate(-45deg);
+
 }
 
 .timeline-nav-inactive {
-  color: grey;
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+.timeline-nav-prev {
+  left: -45px;
+  transform: translateY(-50%);
+}
+
+.timeline-nav-next {
+  right: -45px;
+  transform: translateY(-50%);
 }
 
 .timeline-events {
   position: relative;
+  width: 100%;
+  overflow: hidden;
+  transition: height .4s;
+  text-align: justify;
 }
 
 #timeline-events-ol {
@@ -115,15 +243,22 @@ nav > ul > li {
   animation-timing-function: ease-in-out;
 }
 
+.timeline-event-title {
+  text-align: left;
+  padding: 0;
+}
+
+.timeline-event-content {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .timeline-event-selected {
   position: relative;
   z-index: 2;
   opacity: 1;
   transform: translateX(0);
-}
-
-.timeline-event-descr {
-  list-style-type: square;
 }
 
 .timeline-event-enter-r, .timeline-event-leave-r {
@@ -227,23 +362,36 @@ nav > ul > li {
   transform: rotateY(180deg);
 }
 
-.flip-card-back > h3 {
-  font-family: 'Lobster', cursive;
-  font-size: 2rem;
-  text-align: center;
-  text-decoration: underline;
+/* Rules for Activities & Awards section */
+.activities-divs {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.activities-divs > ul {
+  list-style-type: none;
 }
 
 /* Rules for Personal Interests section*/
-#personal-ctr {
+#slider-ctr {
   width: 85%;
+  height: 18rem;
   margin: 0 auto;
   overflow-x: scroll;
   overflow-y: hidden;
   display: flex;
 }
 
-#personal-ctr > div {
+/*#slider-ctr:before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  background-image: linear-gradient(to right, rgba(131, 197, 190, 1), rgba(131, 197, 190, 0));
+  height: 16rem;
+  width: 4rem;
+}*/
+
+#slider-ctr > div {
   height: 240px;
   width: 240px;
   margin: 8px;
