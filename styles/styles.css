@@ -358,6 +358,20 @@ nav > ul > li {
   transform: rotateY(180deg);
 }
 
+.flip-card-back > h3 {
+  padding: 0.5rem;
+}
+
+.flip-card-front > h2 {
+  color: var(--secondary-font-color);
+  text-decoration: none;
+  padding-top: 40%;
+}
+
+.flip-card-back > p {
+  padding: 0px 10px 5px 10px;
+}
+
 .flip-card-wrapper:hover .flip-card {
   transform: rotateY(180deg);
 }
