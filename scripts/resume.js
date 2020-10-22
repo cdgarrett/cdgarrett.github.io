@@ -1,40 +1,41 @@
 window.onload = function()
 {
-  document.querySelectorAll('.timeline-nav').forEach(icon => icon.addEventListener('click', shiftTimeline));
+  document.querySelectorAll('.arrow').forEach(icon => icon.addEventListener('click', shiftTimeline));
 }
 
 
 function shiftTimeline(e) {
-  let navArrow = e.target;
+  console.log(e);
 
-  /* Ideally this shouldn't be click-able.. */
-  if (navArrow.classList.contains("timeline-nav-inactive"))
+  /* Sanity check - This shouldn't actually be click-able */
+  if (e.target.classList.contains("timeline-nav-inactive"))
     return;
-
+    
+  let navArrow = e.target;
   let currentEvent = document.querySelector('.timeline-event-selected');
-  if (navArrow.textContent == "<")
+
+  console.log(currentEvent);
+  if (navArrow.classList.contains("left"))
   {
-    /* See previous comment about making the arrow unclick-able */
     if (currentEvent.previousElementSibling == null)
       return;
     
     currentEvent.previousElementSibling.classList.add("timeline-event-selected");
     if (currentEvent.previousElementSibling.previousElementSibling == null)
-        navArrow.classList.add("timeline-nav-inactive");
-      
-    navArrow.parentElement.nextElementSibling.firstElementChild.classList.remove("timeline-nav-inactive");
+        navArrow.parentElement.classList.add("timeline-nav-inactive");
+    
+    document.querySelector(".right").parentElement.classList.remove("timeline-nav-inactive");
   }
-  else if (navArrow.textContent == ">")
+  else if (navArrow.classList.contains("right"))
   {
-    /* See previous comment about making the arrow unclick-able */
     if (currentEvent.nextElementSibling == null)
       return;
 
       currentEvent.nextElementSibling.classList.add("timeline-event-selected");
       if (currentEvent.nextElementSibling.nextElementSibling == null)
-        navArrow.classList.add("timeline-nav-inactive");
+        navArrow.parentElement.classList.add("timeline-nav-inactive");
       
-      navArrow.parentElement.previousElementSibling.firstElementChild.classList.remove("timeline-nav-inactive");
+        document.querySelector(".left").parentElement.classList.remove("timeline-nav-inactive");
   }
   currentEvent.classList.remove("timeline-event-selected");
   console.log(currentEvent.classList);
