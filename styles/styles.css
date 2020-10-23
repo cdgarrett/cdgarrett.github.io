@@ -3,20 +3,20 @@
 p { margin:5px 0 10px 0; }
 
 :root {
-  --section-color-1: #006D77;
-  --section-color-2: #83C5BE;
+  --primary-dk: #006D77;
+  --primary-lt: #83C5BE;
   --main-font-color: #EDF6F9;
   --secondary-font-color: #006d77;
-  --section-color-1-fade: rgba(0, 109, 119, 0.5);
-  --nav-color: #E29578;
-  --card-color: #FFDDD2;
   --highlight-color: #E29578;
+  --card-color: #FFDDD2;
+  /*--section-color-1-fade: rgba(0, 109, 119, 0.5);*/
 }
 
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.2rem;
   color: var(--main-font-color);
+  font-weight: bolder;
 }
 
 h1, h2 {
@@ -41,11 +41,21 @@ section {
 }
 
 .bg1 {
-  background-color: var(--section-color-1);
+  background-color: var(--primary-dk);
+}
+
+.header-sec1 {
+  text-shadow: 2px 2px var(--primary-lt);
 }
 
 .bg2 {
-  background-color: var(--section-color-2);
+  background-color: var(--primary-lt);
+  text-shadow: 1px 1px var(--primary-dk);
+
+}
+
+.header-sec2 {
+  text-shadow: 2px 2px var(--primary-dk);
 }
 
 /* Rules for fixed header nav bar and nav links */
@@ -54,8 +64,9 @@ nav {
   top: 0px;
   left: 0px;
   width: 100%;
-  height: 48px;
-  background-color: var(--nav-color);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: var(--highlight-color);
   font-family: 'Lobster', cursive;
   font-size: 1.8rem;
   color: var(--main-font-color);
@@ -75,6 +86,32 @@ nav > ul > li {
   list-style-type: none;
   float: left;
   margin: 4px 8px 4px 8px;
+}
+
+/* Rules for Welcome section */
+#welcome-sec {
+  height: 600px;
+  font-family: 'Lobster', cursive;
+  font-size: 1.8rem;
+  font-weight: lighter;
+  text-align: center;
+}
+
+#profile-img {
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+  margin: 25px auto;
+}
+
+.separator-dot {
+  display: inline-block;
+  vertical-align: middle;
+  height: 8px;
+  width: 8px;
+  margin: 0 10px;
+  border-radius: 50%;
+  background-color: var(--primary-lt);
 }
 
 /* Rules for Experience section horizontal scrolling cards */
@@ -149,7 +186,7 @@ nav > ul > li {
   width: 12px;
   border-radius: 50%;
   border: 2px solid var(--highlight-color);
-  background-color: var(--section-color-2);
+  background-color: var(--primary-lt);
 }
 
 .timeline-date-selected {
@@ -179,11 +216,11 @@ nav > ul > li {
 }
 
 .timeline-nav:hover {
-  background-color: var(--section-color-2);
+  background-color: var(--primary-lt);
 }
 
 .timeline-nav-inactive:hover {
-  background-color: var(--section-color-1);
+  background-color: var(--primary-dk);
 }
 
 .arrow {
@@ -193,6 +230,7 @@ nav > ul > li {
   padding: 3px;
   height: 4px;
   width: 4px;
+  pointer-events: none;
 }
 
 .left {
@@ -274,7 +312,7 @@ nav > ul > li {
   animation-direction: reverse;
 }
 
-@keyframes cd-enter-right {
+@keyframes enter-right {
   0% {
      opacity: 0;
      transform: translateX(100%);
@@ -286,7 +324,7 @@ nav > ul > li {
   }
 }
 
-@keyframes cd-enter-left {
+@keyframes enter-left {
   0% {
      opacity: 0;
      transform: translateX(-100%);
@@ -342,6 +380,8 @@ nav > ul > li {
   transition: transform 1s;
   transform-style: preserve-3d;
   border: 4px solid var(--highlight-color);
+  font-weight: normal;
+  text-shadow: none;
 }
 
 .flip-card-front, .flip-card-back {
@@ -428,7 +468,7 @@ footer {
   left: 0px;
   width: 100%;
   height: 48px;
-  background-color: var(--nav-color);
+  background-color: var(--highlight-color);
   font-family: 'Lobster', cursive;
   font-size: 1.8rem;
   color: var(--main-font-color);
