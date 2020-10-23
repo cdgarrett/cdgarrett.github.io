@@ -2,8 +2,18 @@ window.onload = function()
 {
   document.querySelectorAll('.timeline-nav').forEach(nav => nav.addEventListener('click', shiftTimeline));
   document.querySelectorAll('.timeline-date').forEach(date => date.addEventListener('click', jumpToDate));
-  document.querySelectorAll('.timeline-event').forEach(event => event.addEventListener('animationend', removeAnimation));}
+  document.querySelectorAll('.timeline-event').forEach(event => event.addEventListener('animationend', removeAnimation));
+}
 
+/**
+ * Function: shiftTimeline
+ * Summary:  Handles shifting timeline events when a
+ *           timeline nav arrow is clicked.  Applies/removes
+ *           active/inactive stylings as necessary for 
+ *           timeline events, dots, nav arrows, and animations.
+ * Inputs:   Event e
+ * Returns:  None.
+*/
 function shiftTimeline(e) {
   console.log(e.target);
 
@@ -49,6 +59,15 @@ function shiftTimeline(e) {
   }
 }
 
+/**
+ * Function: jumpToDate
+ * Summary:  Handles shifting timeline events when a
+ *           timeline "dot" is clicked.  Applies/removes
+ *           active/inactive stylings as necessary for 
+ *           timeline events, dots, nav arrows, and animations.
+ * Inputs:   Event e
+ * Returns:  None.
+*/
 function jumpToDate(e) {
   let currDateElement = document.querySelector('.timeline-date-selected');
   let currEventElement = document.querySelector('.timeline-event-selected');
@@ -89,6 +108,14 @@ function jumpToDate(e) {
   });
 }
 
+/**
+ * Function: removeAnimation
+ * Summary:  Callback function for animationend listener,
+ *           removes any animation-related classes when an
+ *           animation finishes.
+ * Inputs:   Event e
+ * Returns:  None.
+*/
 function removeAnimation(e) {
   this.classList.remove("timeline-event-enter-r", "timeline-event-leave-r", "timeline-event-enter-l", "timeline-event-leave-l");
 }
